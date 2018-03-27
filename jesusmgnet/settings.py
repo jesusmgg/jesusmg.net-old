@@ -25,7 +25,7 @@ SECRET_KEY = 'm_2-!had(p&b5&9ob5x@(ou18(q%vu13-u+-wpna+5$+4r4%4='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'jesusmg.net', '127.0.0.1', '192.168.74.195']
+ALLOWED_HOSTS = ['localhost', 'jesusmg.net', 'www.jesusmg.net', '127.0.0.1', '192.168.74.195']
 
 
 # Application definition
