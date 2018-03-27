@@ -1,0 +1,4 @@
+Django==1.11.11
+Pillow==5.0.0
+pytz==2018.3
+django-ckeditor==5.4.0

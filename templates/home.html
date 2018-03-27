@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1>Welcome</h1>
+            <p class="lead">I'm Jesus Gonzalez, indie game developer.</p>
+            </br>
+            <h2>Here you can check <a href="{% url 'games' %}">my games</a>.</h2>
+            <h2>Also <a href="{% url 'assets' %}">game assets</a> for your own creations.</h2>
+            <h2>Or <a href="{% url 'contact' %}">get in touch</a>.</h2>
+        </div>
+    </div>
+{% endblock %}

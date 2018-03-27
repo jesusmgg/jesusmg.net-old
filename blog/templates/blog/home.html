@@ -1,0 +1,54 @@
+{% extends "blog/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}
+    Blog - Jesús González - Official Site
+{% endblock %}
+
+{% block blogcontent %}
+    <!-- Blog Entries Column -->
+    <div class="col-md-8">
+
+        <h1 class="page-header">
+            Blog
+        </h1>
+
+        <!-- Blog Posts -->
+        {% for post in posts %}
+            <h2>
+                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            </h2>
+            <h5>
+                by <a href="index.php">{{ post.author }}</a>
+            </h5>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.date }}</p>
+            <hr>
+            {% if post.preview_image %}
+                <img class="img-responsive" src="{{ post.preview_image.url }}" alt="{{ post.title }}">
+                <hr>
+            {% endif %}
+            {{ post.content|safe|truncatewords_html:70 }}
+            <a class="btn btn-primary" href="{{ post.get_absolute_url }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+            <hr>
+            <br>
+        {% endfor %}
+
+        <!-- Pager -->
+        <ul class="pager">
+            {% if posts.has_previous %}
+                <li class="next">
+                    <a href="?page={{ posts.previous_page_number }}">Newer &rarr;</a>
+                </li>
+            {% endif %}
+
+            {% if posts.has_next %}
+                <li class="previous">
+                    <a href="?page={{ posts.next_page_number }}">&larr; Older</a>
+                </li>
+            {% endif %}
+        </ul>
+
+    </div>
+{% endblock %}
