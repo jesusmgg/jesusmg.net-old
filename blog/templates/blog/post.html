@@ -2,6 +2,14 @@
 
 {% load i18n static %}
 
+{% block extrahead_2 %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jesusma_g" />
+    <meta name="twitter:title" content="{{ post.title }}" />
+    <meta name="twitter:description" content="{{ post.content|safe|truncatewords_html:40 }}" />
+    <meta name="twitter:image" content="{{ post.preview_image.url }}" />
+{% endblock %}
+
 {% block title %}
     {{ post.title }} - Jesús González - Official Site
 {% endblock %}
